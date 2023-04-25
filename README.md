@@ -12,7 +12,7 @@ Also you can use this bot to create group polls.
 
 `git clone https://github.com/vasgg/aiogram_test_bot.git`
 
-3. Rename [env.env](aiogram_test_bot/env.env) file to ".env"
+3. Rename [env.env](env.env) file to ".env"
 
 4. Copy and paste your telegram bot token into .env file
 
