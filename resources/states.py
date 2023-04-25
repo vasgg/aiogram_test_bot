@@ -8,4 +8,4 @@ class States(StatesGroup):
     second_currency = State()
     enter_question = State()
     enter_options = State()
-    enter_chat_id = State()
+    enter_group_id = State()

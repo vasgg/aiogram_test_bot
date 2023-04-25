@@ -10,4 +10,3 @@ async def send_poll(chat_id: int, question: str, options: list[str]):
         allows_multiple_answers=False
     )
     return poll
-

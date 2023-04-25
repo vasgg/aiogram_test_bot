@@ -14,24 +14,28 @@ class Weather:
 
 
 async def get_weather_from_message(city_name: str) -> Weather:
-    return await make_weather_service_query(get_city_weather_url(city_name))
+    return await make_weather_service_request(await get_city_weather_url(city_name))
+
 
 async def get_weather_from_location(latitude: float, longitude: float) -> Weather:
-    return await make_weather_service_query(get_city_weather_url_from_location(latitude, longitude))
+    return await make_weather_service_request(await get_city_weather_url_from_location(latitude, longitude))
 
-def get_city_weather_url(city_name: str) -> str:
+
+async def get_city_weather_url(city_name: str) -> str:
     return WEATHER_URL.format(city_name, weather_apikey)
 
-def get_city_weather_url_from_location(latitude: float, longitude: float) -> str:
+
+async def get_city_weather_url_from_location(latitude: float, longitude: float) -> str:
     return WEATHER_GEO_URL.format(latitude, longitude, weather_apikey)
 
-async def make_weather_service_query(url: str) -> json:
+
+async def make_weather_service_request(url: str) -> json:
     async with aiohttp.ClientSession() as session:
         response = await session.get(url)
         if response.status == 200:
-            return get_weather_from_response(await response.json())
+            return await get_weather_from_response(await response.json())
     raise Exception
 
 
-def get_weather_from_response(json) -> Weather:
-    return Weather(json['name'], json['main']['temp'], json['weather'][0]['description'])
+async def get_weather_from_response(json) -> Weather:
+    return Weather(city=json['name'], temp=json['main']['temp'], info=json['weather'][0]['description'])
