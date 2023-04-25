@@ -6,10 +6,13 @@ Also you can use this bot to create group polls.
 ## Getting started
 
 1. Create a new Telegram bot with [BotFather](https://web.telegram.org/k/#@BotFather)
+
 2. Clone this repository to your local machine:
 
 `git clone https://github.com/vasgg/aiogram_test_bot.git`
+
 3. Rename [env.env](aiogram_test_bot/blob/main/env.env) file to ".env"
+
 4. Copy and paste your telegram bot token into .env file
 
 `BOT_TOKEN=INSERT_YOUR_TOKEN_HERE`
