@@ -2,7 +2,7 @@ from aiogram import types
 from aiogram.dispatcher.filters import Command
 
 from config import dp
-from resources.keyboard import menu
+from resources.keyboards import menu
 from resources.replies import answer
 from resources.states import States
 

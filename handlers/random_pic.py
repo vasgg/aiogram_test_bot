@@ -2,7 +2,7 @@ from aiogram import types
 
 from config import dp
 from resources.random_pic import get_random_pic
-from resources.keyboard import menu
+from resources.keyboards import menu
 from resources.replies import answer
 
 

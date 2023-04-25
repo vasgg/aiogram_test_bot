@@ -13,5 +13,6 @@ bot = Bot(token=token, parse_mode=types.ParseMode.HTML)
 dp = Dispatcher(bot, storage=MemoryStorage())
 
 WEATHER_URL = 'http://api.openweathermap.org/data/2.5/weather?q={}&appid={}&lang=ru&units=metric'
+WEATHER_GEO_URL = 'http://api.openweathermap.org/data/2.5/weather?lat={}&lon={}&appid={}&lang=ru&units=metric'
 RANDOM_PIC_URL = 'https://random-d.uk/api/random'
 EXCHANGE_RATE_URL = 'https://v6.exchangerate-api.com/v6/{}/pair/{}/{}/{}'
